@@ -1,0 +1,109 @@
+/* import google font  */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Tajawal", sans-serif;
+
+}
+body{
+    background-color: #aaa;
+}
+.container .title{
+    font-size: 54px;
+    color: black;
+}
+.container .prayer-day{
+    font-size: 24px;
+    color: black;
+}
+.container .line{
+    height: 1px;
+    background-color: black;
+}
+.container .city select{
+    font-size: 18px;
+    color: black;
+    padding: 4px;
+    border: none;
+    border-radius: 10px;
+}
+
+.container .city select:focus{
+    outline: none;
+}
+.container .prayer-times{
+    flex-direction: row;
+}
+@media (max-width: 767px){
+    .container .prayer-times{
+        flex-wrap: wrap;
+    }
+}
+@media (min-width: 767px) and (max-width: 992px) {
+    .container .prayer-times{
+        flex-wrap: wrap;
+    }
+}
+.container .prayer-times .time{
+    width: 150px;
+    height: 150px;
+    background-color: #ccc;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+.container .prayer-times .time .prayer{
+    width: 100%;
+    height: 30%;
+    padding: 8px 8px 12px 8px;
+    background-color: #bbb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius:10px 10px 0 0;
+    font-size: 25px;
+    font-weight: bold;
+}
+.container .prayer-times .time .time-value{
+    width: 100%;
+    height: 70%;
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius:0 0 10px 10px;
+    font-size: 25px;
+    font-weight: bold;
+}
+@media (max-width: 767px){
+    .container .prayer-times .time{
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 40.5px;
+        background: none;
+    }
+    .container .prayer-times .time .prayer{
+        flex-direction: row;
+        height: 100%;
+        border-radius: 0px 10px 0 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .container .prayer-times .time .time-value{
+        background-color: #eee;
+        height: 100%;
+        border-radius:0 0 0px 10px;
+        font-size: 22px;
+        font-weight: bold;
+    }
+}
