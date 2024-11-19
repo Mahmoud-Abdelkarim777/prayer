@@ -49,7 +49,7 @@ function getPrayerTimeOfCity(cityName) {
         country: 'EG',
         city: cityName   //'Asyūţ',
     }
-    axios.get('http://api.aladhan.com/v1/hijriCalendarByCity', {
+    axios.get('https://api.aladhan.com/v1/hijriCalendarByCity', {
             params: params
         })
 
@@ -91,110 +91,4 @@ getPrayerTimeOfCity("Asyūţ"); // returns the assuit as defult
 function fillTimeForPrayer(id, time) {
     document.getElementById(id).innerHTML = time
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let cities_select = document.getElementById("cities-select");
-// let cities = [
-//     {
-//         arabicName: "القاهرة",
-//         name: "Al Qāhirah"
-//     },
-//     {
-//         arabicName: "أسيوط",
-//         name: "Asyūţ"
-//     },
-//     {
-//         arabicName: "الدقهلية",
-//         name: "Ad Daqahlīyah"
-//     },
-//     {
-//         arabicName: "سوهاج",
-//         name: "Sohag"
-//     },
-//     {
-//         arabicName: "دمياط",
-//         name: "Dumyāţ"
-//     }
-// ];
-
-// for (let city of cities) {
-//     const content = `<option>${city.arabicName}</option>`;
-//     cities_select.innerHTML += content;
-// }
-
-// cities_select.addEventListener("change", function () {
-//     document.querySelector(".title").innerHTML = this.value;
-//     let cityName = "";
-//     for (let city of cities) {
-//         if (city.arabicName == this.value) {
-//             cityName = city.name;
-//         }
-//     }
-//     console.log(this.value);
-//     getPrayerTimeOfCity(cityName);
-// });
-
-// function getPrayerTimeOfCity(cityName) {
-//     let params = {
-//         country: 'EG',
-//         city: cityName, // أسيوط أو المدينة المحددة
-//     };
-//     axios.get('http://api.aladhan.com/v1/hijriCalendarByCity', { params: params })
-
-//         .then(function (response) {
-//             const today = new Date().getDate(); 
-//             const data = response.data.data[today - 3];
-//             const timings = data.timings;
-//             fillTimeForPrayer("fajr-time", timings.Fajr);
-//             fillTimeForPrayer("sunrise-time", timings.Sunrise);
-//             fillTimeForPrayer("dhuhr-time", timings.Dhuhr);
-//             fillTimeForPrayer("asr-time", timings.Asr);
-//             fillTimeForPrayer("maghreb-time", timings.Maghrib);
-//             fillTimeForPrayer("isha-time", timings.Isha);
-
-//             // console.log(response.data.data[today - 3]);
-            
-//             // التاريخ الميلادي والهجري
-//             const readableDateEn = data.date.readable;
-//             document.getElementById("date-en").innerHTML = readableDateEn;
-
-//             const readableDateArDay = data.date.hijri.day;
-//             document.getElementById("date-ar-day").innerHTML = readableDateArDay;
-
-//             const readableDateArMonth = data.date.hijri.month.ar;
-//             document.getElementById("date-ar-month").innerHTML = readableDateArMonth;
-
-//             const readableDateArMont = data.date.hijri.weekday.ar;
-//             const day = document.querySelectorAll(".day");
-//             day.forEach((element) => {
-//                 element.innerHTML = readableDateArMont;
-//             });
-//         })
-//         .catch(function (error) {
-//             console.log(error);
-//         });
-// }
-// getPrayerTimeOfCity("Asyūţ")
-// function fillTimeForPrayer(id, time) {
-//     document.getElementById(id).innerHTML = time;
-// }
 
