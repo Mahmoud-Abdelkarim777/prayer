@@ -55,7 +55,11 @@ function getPrayerTimeOfCity(cityName) {
 
         .then(function (response) {
             let today = new Date().getDate(); // get current day
-            let data = response.data.data[today - 3] // get data of current day from response
+            let data = response.data.data[today] // get data of current day from response
+            
+            console.log(today);
+            console.log(data);
+            console.log(response);
             
             const timings = data.timings
             fillTimeForPrayer("fajr-time", timings.Fajr)

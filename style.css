@@ -10,6 +10,24 @@
 }
 body{
     background-color: #aaa;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* لجعل الخلفية تغطي الشاشة بالكامل */
+    background: linear-gradient(45deg, #191818, #292927, #ffffff, #ffea00);
+    background-size: 400% 400%; /* حجم كبير للخلفية يسمح بالحركة */
+    animation: gradientAnimation 10s ease infinite; /* حركة الخلفية */
+}
+/* تعريف الحركة */
+@keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%; /* بدء الحركة */
+    }
+    50% {
+      background-position: 100% 50%; /* منتصف الحركة */
+    }
+    100% {
+      background-position: 0% 50%; /* نهاية الحركة */
+    }
 }
 .container .title{
     font-size: 54px;
