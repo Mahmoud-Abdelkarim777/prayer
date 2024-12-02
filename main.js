@@ -191,3 +191,10 @@ function fillTimeForPrayer(id, time) {
     document.getElementById(id).innerHTML = time
 }
 
+// Get the current year
+let date = new Date();
+let year = date.getFullYear();
+
+let element = document.getElementById("year");
+element.innerHTML = year;
+
