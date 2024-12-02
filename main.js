@@ -19,7 +19,100 @@ let cities = [
     {
         arabicName: "دمياط",
         name: "Dumyāţ"
-    }
+    },
+    {
+        arabicName: "الدقهلية",
+        name: "Ad Daqahlīyah"
+    },
+    {
+        arabicName: "البحر الأحمر",
+        name: "Al Baḩr al Aḩmar"
+    },
+    {
+        arabicName: "البحيرة",
+        name: "Al Buḩayrah"
+    },
+    {
+        arabicName: "الفيوم",
+        name: "Al Fayyūm"
+    },
+    {
+        arabicName: "الغربية",
+        name: "Al Gharbīyah"
+    },
+    {
+        arabicName: "الاسكندرية",
+        name: "Al Iskandarīyah"
+    },
+    {
+        arabicName: "الاسماعيلية",
+        name: "Al Ismā'īlīyah	"
+    },
+    {
+        arabicName: "الجيزة",
+        name: "Al Jīzah"
+    },
+    {
+        arabicName: "المنيا",
+        name: "Al Minyā		"
+    },
+    {
+        arabicName: "المنوفية",
+        name: "Al Minūfīyah"
+    },
+    {
+        arabicName: "القليوبية",
+        name: "Al Qalyūbīyah"
+    },
+    {
+        arabicName: "الاقصر",
+        name: "Al Uqşur	"
+    },
+    {
+        arabicName: "الوادي الجديد",
+        name: "Al Wādī al Jadīd"
+    },
+    {
+        arabicName: "السويس",
+        name: "As Suways"
+    },
+    { 
+        arabicName: "الشرقية",
+        name: "Ash Sharqīyah"
+    },
+    {
+        arabicName: "أسوان",
+        name: "Aswān"
+    },
+    {
+        arabicName: "بني سويف",
+        name: "Banī Suwayf"
+    },
+    {
+        arabicName: "بور سعيد",
+        name: "Būr Sa‘īd"
+    },
+    {
+        arabicName: "كفر الشيخ",
+        name: "	Kafr ash Shaykh"
+    },
+    {
+        arabicName: "مطروح",
+        name: "Maţrūḩ"
+    },
+    {
+        arabicName: "قنا",
+        name: "Qinā"
+    },
+    {
+        arabicName: "شمال سينا ",
+        name: "Shamāl Sīnā'"
+    },
+    {
+        arabicName: "جنوب سينا",
+        name: "	Janūb Sīnā'"
+    },
+    
 ];
 
 let cities_select = document.getElementById("cities-select") // get select element
@@ -49,17 +142,15 @@ function getPrayerTimeOfCity(cityName) {
         country: 'EG',
         city: cityName   //'Asyūţ',
     }
-    axios.get('https://api.aladhan.com/v1/hijriCalendarByCity', {
+    axios.get('https://api.aladhan.com/v1/timingsByCity', {
             params: params
         })
 
         .then(function (response) {
-            let today = new Date().getDate(); // get current day
-            let data = response.data.data[today] // get data of current day from response
+            let data = response.data.data // get data of current day from response
             
-            console.log(today);
-            console.log(data);
-            console.log(response);
+            console.log(data.timings);
+            // console.log(response);
             
             const timings = data.timings
             fillTimeForPrayer("fajr-time", timings.Fajr)
@@ -68,6 +159,10 @@ function getPrayerTimeOfCity(cityName) {
             fillTimeForPrayer("asr-time", timings.Asr)
             fillTimeForPrayer("maghreb-time", timings.Maghrib)
             fillTimeForPrayer("isha-time", timings.Isha)
+            fillTimeForPrayer("Firstthird-time", timings.Firstthird)
+            fillTimeForPrayer("Midnight-time", timings.Midnight)
+            fillTimeForPrayer("Lastthird-time", timings.Lastthird)
+            fillTimeForPrayer("Imsak-time", timings.Imsak)
     
             const Date_en = data.date.readable // get date from response ex: 12 nov 2024
             document.getElementById("date-en").innerHTML = Date_en

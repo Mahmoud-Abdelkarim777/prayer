@@ -12,23 +12,14 @@ body{
     background-color: #aaa;
     margin: 0;
     padding: 0;
-    height: 100vh; /* لجعل الخلفية تغطي الشاشة بالكامل */
-    background: linear-gradient(45deg, #191818, #292927, #ffffff, #ffea00);
-    background-size: 400% 400%; /* حجم كبير للخلفية يسمح بالحركة */
-    animation: gradientAnimation 10s ease infinite; /* حركة الخلفية */
+    background-image: url(https://i.gifer.com/origin/39/39b0fd29fcc884cbd7df6203caca08d8_w200.gif);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* height: 100vh; */
+
 }
-/* تعريف الحركة */
-@keyframes gradientAnimation {
-    0% {
-      background-position: 0% 50%; /* بدء الحركة */
-    }
-    50% {
-      background-position: 100% 50%; /* منتصف الحركة */
-    }
-    100% {
-      background-position: 0% 50%; /* نهاية الحركة */
-    }
-}
+
 .container .title{
     font-size: 54px;
     color: black;
@@ -53,8 +44,9 @@ body{
     outline: none;
 }
 .container .prayer-times{
-    flex-direction: row;
+    flex-wrap: wrap;
 }
+
 @media (max-width: 767px){
     .container .prayer-times{
         flex-wrap: wrap;
@@ -66,7 +58,7 @@ body{
     }
 }
 .container .prayer-times .time{
-    width: 150px;
+    width: 170px;
     height: 150px;
     background-color: #ccc;
     display: flex;
