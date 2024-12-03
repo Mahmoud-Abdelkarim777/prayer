@@ -13,13 +13,19 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="title mt-4">أسيوط</h1>
-        <div class="prayer-day">
+        <div class="d-flex flex-column flex-md-row align-items-center gap-0 gap-md-5">
+            <h1 class="country mt-4">مصر</h1>
+        <h1 class="title mt-0 mt-md-4">أسيوط</h1>
+        </div>
+        <div class="prayer-day fw-bold">
             <span class="day" id="day-en"></span> - <span class="date" id="date-en"></span> <br>
             <span class="day" id="day-ar"></span> - <span id="date-ar-day" class="ms-1"></span><span id="date-ar-month"></span>
         </div>
         <div class="line mt-3"></div>
-        <div class="city mt-4 d-flex align-items-center justify-content-center">
+        <div class="city mt-4 d-flex align-items-center justify-content-center gap-3">
+            <select name="" id="country-select">
+                <option disabled selected >اختر بلدك</option>
+            </select>
             <select name="" id="cities-select">
                 <option disabled selected >اختر مدينتك</option>
             </select>
@@ -78,6 +84,9 @@
     <script src="bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
     <!-- axios cdn  -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- sweet alert cdn  -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- external file  -->
     <script src="main.js"></script>
 </body>
 </html>

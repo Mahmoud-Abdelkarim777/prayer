@@ -20,6 +20,11 @@ body{
 
 }
 
+.container .country{
+    font-size: 54px;
+    color: black;
+    font-weight: bold;
+}
 .container .title{
     font-size: 54px;
     color: black;
@@ -38,6 +43,7 @@ body{
     padding: 4px;
     border: none;
     border-radius: 10px;
+    width: 160px;
 }
 
 .container .city select:focus{
@@ -51,6 +57,10 @@ body{
     .container .prayer-times{
         flex-wrap: wrap;
     }
+    .container .title {
+        font-size: 44px;
+    }
+    
 }
 @media (min-width: 767px) and (max-width: 992px) {
     .container .prayer-times{
